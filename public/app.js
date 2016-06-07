@@ -10,14 +10,16 @@ var quotesArray = [
     {text: "I used the jQuery diet plugin and lost 10kg in a week.", author: "Keith"},
     {text: "Scaffolding is nothing but a fiery hell.", author: "Valerie"}
 
-]
+];
 
   
   for (var i = 0; i < quotesArray.length; i++){
     createQuote(quotesArray[i].text, quotesArray[i].author);
-    }
+    console.log("here");
+  }
 
-    function createQuote(text, author){
+}
+function createQuote(text, author){
       var quoteArticle = document.createElement('article');
         quoteArticle.classList.add('quote');
 
@@ -32,10 +34,10 @@ var quotesArray = [
       quoteArticle.appendChild(blockQuote);
 
       var quotes = document.querySelector('#quotes');
-      quotes.appendChild(quoteArticle);
-    } 
+      // quotes.appendChild(quoteArticle);
+      quotes.insertBefore(quoteArticle, document.querySelector('#quote-of-the-day'));
+} 
 
-  
 
   //   var blockQuote = document.createElement('blockquote');
   //   blockQuote.innerText = "Open the pod bay doors Hal";
